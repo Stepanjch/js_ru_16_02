@@ -5,7 +5,7 @@ import ArticleList from './ArticleList'
 class Container extends Component {
     state = {
         articles: articlesStore.getAll()
-    }
+    };
 
     componentDidMount() {
         articlesStore.addChangeListener(this.change)

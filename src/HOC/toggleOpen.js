@@ -4,7 +4,7 @@ export default function (CustomComponent) {
     return class extends Component {
         state = {
             isOpen: true
-        }
+        };
 
         render() {
             return <CustomComponent

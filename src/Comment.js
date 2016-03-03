@@ -7,9 +7,9 @@ class Comment extends Component {
 
     render() {
         return (
-            <div>
-                <p>{this.props.comment.text}</p>
-            </div>
+            <li className="list-group-item">
+                {this.props.comment.text}
+            </li>
         )
     }
 }

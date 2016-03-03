@@ -13,7 +13,7 @@
 
 .example-leave.example-leave-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 .example-appear {
@@ -22,5 +22,13 @@
 
 .example-appear.example-appear-active {
     opacity: 1;
-    transition: opacity .5s ease-in;
+    transition: opacity 500ms ease-in;
 }
+
+.interactive-title {
+    cursor: pointer;
+}
+
+/*.interactive-title:hover {*/
+   /*background-color: rgb(193, 195, 197);*/
+/*}*/

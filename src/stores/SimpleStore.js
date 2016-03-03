@@ -1,13 +1,13 @@
 import { EventEmitter } from 'events'
 import Model from './Model'
-const CHANGE_EVENT = 'CHANGE_EVENT'
+const CHANGE_EVENT = 'CHANGE_EVENT';
 
 
 class SimpleStore extends EventEmitter {
     constructor(stores, initialState) {
-        super()
-        this.__stores = stores
-        this.__items = []
+        super();
+        this.__stores = stores;
+        this.__items = [];
         if (initialState) initialState.forEach(this.add)
     }
 
@@ -29,17 +29,15 @@ class SimpleStore extends EventEmitter {
 
     getById = (id) => {
         return this.__items.filter((item) => item.id == id)[0]
-    }
+    };
 
     add = (item) => {
         this.__items.push(new Model(item, this.__stores))
-    }
+    };
 
     delete(id) {
         this.__items = this.__items.filter(item => item.id != id)
     }
-
-
 }
 
 export default SimpleStore
