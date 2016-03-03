@@ -22,7 +22,6 @@ class Article extends Component {
                 </div>
                 <div className="card-block text-xs-right">
                     <div className="btn-group" role="group">
-                        <a href="#" onClick={this.select.bind(this)} className="btn btn-secondary btn-sm">select</a>
                         <a href="#" onClick={this.handleDeleteArticle} className="btn btn-danger btn-sm">Delete
                             article</a>
                     </div>
@@ -39,11 +38,12 @@ class Article extends Component {
         const headerClasses = classNames({
             'card-header': true,
             'card-primary': this.props.selected,
-            'interactive-title': true
+            'interactive-title': true,
+            'clearfix': true
         });
         return (
             <h5 className={headerClasses} style={selectedStyle} onClick={onClick} onMouseEnter={showHint(title)} onMouseLeave={hideHint}>
-                {title}
+                {title} <a href="#" onClick={this.select.bind(this)} className="btn btn-secondary btn-sm pull-xs-right">select</a>
             </h5>
         )
     }
@@ -65,6 +65,7 @@ class Article extends Component {
     };
 
     select(ev) {
+        ev.stopPropagation();
         ev.preventDefault();
         this.props.select();
     }

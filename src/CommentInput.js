@@ -15,12 +15,11 @@ class CommentInput extends Component {
 
     render() {
         return (
-            <div>
+            <div className="clearfix">
                 <fieldset className="form-group">
-                    <label className="text-muted">Add your comment</label>
-                    <textarea className="form-control" rows="3" value={this.state.comment} onChange={this.handleCommentChange}></textarea>
+                    <textarea className="form-control" rows="3" value={this.state.comment} placeholder="Write your comment" onChange={this.handleCommentChange}></textarea>
                 </fieldset>
-                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm">Add</a>
+                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm pull-xs-right">Add</a>
             </div>
         )
     }
