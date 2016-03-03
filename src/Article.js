@@ -39,9 +39,9 @@ class Article extends Component {
             'pull-xs-right': true
         });
         return (
-            <h5 className={headerClasses} style={selectedStyle} onClick={onClick} onMouseEnter={showHint(title)} onMouseLeave={hideHint}>
+            <h6 className={headerClasses} style={selectedStyle} onClick={onClick} onMouseEnter={showHint(title)} onMouseLeave={hideHint}>
                 {title} <i title="Select article" className={selectClasses} onClick={this.select.bind(this)}></i>
-            </h5>
+            </h6>
         )
     }
 

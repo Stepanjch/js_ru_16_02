@@ -19,7 +19,7 @@ class CommentInput extends Component {
                 <fieldset className="form-group">
                     <textarea className="form-control" rows="3" value={this.state.comment} placeholder="Write your comment" onChange={this.handleCommentChange}></textarea>
                 </fieldset>
-                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm pull-xs-right">Add</a>
+                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm pull-xs-right"><i className='fa fa-commenting-o'></i> Add</a>
             </div>
         )
     }

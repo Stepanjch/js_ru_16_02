@@ -22,13 +22,9 @@ class CommentList extends Component {
                            comments.length > 1 ? `Read ${comments.length} comments` : `Read comment`;
         return (
             <div>
-                <a href="#" className="btn btn-secondary btn-sm btn-block" onClick={this.toggleOpen}>{actionText}</a>
-                { !isOpen ? null : <div className="card">
-                    <ul className="list-group list-group-flush">
-                        {comments}
-                        <li className="list-group-item"><CommentInput articleId={articleId}/></li>
-                    </ul>
-                </div> }
+                <a href="#" className="btn btn-secondary btn-sm btn-block" onClick={this.toggleOpen}><i className='fa fa-comments-o'></i> {actionText}</a>
+                { !isOpen ? null : comments }
+                { !isOpen ? null : <div className="card card-block"><CommentInput articleId={articleId}/></div> }
             </div>
         )
     }
