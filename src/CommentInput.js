@@ -31,6 +31,7 @@ class CommentInput extends Component {
     handleCommentSubmit = (event) => {
         event.preventDefault();
         const id = this.props.articleId;
+        //выносить commentId в AC - это часть логики
         const commentId = parseInt(id + '' + new Date().getTime());
         addComment(id, this.state.comment, commentId);
         this.setState({comment: ''});
