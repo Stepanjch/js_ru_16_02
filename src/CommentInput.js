@@ -20,7 +20,7 @@ class CommentInput extends Component {
                     <label className="text-muted">Add your comment</label>
                     <textarea className="form-control" rows="3" value={this.state.comment} onChange={this.handleCommentChange}></textarea>
                 </fieldset>
-                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm pull-right">Add</a>
+                <a href="#" onClick={this.handleCommentSubmit} className="btn btn-primary btn-sm">Add</a>
             </div>
         )
     }

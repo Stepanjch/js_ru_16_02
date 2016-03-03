@@ -17,10 +17,12 @@ class CommentList extends Component {
         const articleId = this.props.id;
         const comments = this.props.comments.map((comment) =>
             <Comment key={comment.id} comment={comment}/>);
-        const actionText = isOpen ? 'Hide comments' : !comments.length ? `Write first comment` : comments.length > 1 ?`Read ${comments.length} comments` : `Read comment`;
+        const actionText = isOpen ? 'Close comments' :
+                           !comments.length ? `Write first comment` :
+                           comments.length > 1 ? `Read ${comments.length} comments` : `Read comment`;
         return (
             <div>
-                <a href="#" className="btn btn-secondary btn-sm pull-right" onClick={this.toggleOpen}>{actionText}</a>
+                <a href="#" className="btn btn-secondary btn-sm btn-block" onClick={this.toggleOpen}>{actionText}</a>
                 <div className="card">
                     <ul className="list-group list-group-flush">
                         {isOpen ? comments : null}
