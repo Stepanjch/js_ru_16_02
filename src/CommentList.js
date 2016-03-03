@@ -23,12 +23,12 @@ class CommentList extends Component {
         return (
             <div>
                 <a href="#" className="btn btn-secondary btn-sm btn-block" onClick={this.toggleOpen}>{actionText}</a>
-                <div className="card">
+                { !isOpen ? null : <div className="card">
                     <ul className="list-group list-group-flush">
-                        {isOpen ? comments : null}
-                        {isOpen ? <li className="list-group-item"><CommentInput articleId={articleId}/></li> : null}
+                        {comments}
+                        <li className="list-group-item"><CommentInput articleId={articleId}/></li>
                     </ul>
-                </div>
+                </div> }
             </div>
         )
     }
