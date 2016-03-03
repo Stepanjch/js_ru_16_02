@@ -9,20 +9,11 @@ class Article extends Component {
 
 
     render() {
-        const deleteTitle = `Delete "${this.props.article.title}" article`;
         return (
             <div className="card">
-                {this.getTitle()}
-
-                <CSSTransition transitionName="example" transitionAppear={true} transitionAppearTimeout={250} transitionEnterTimeout={250} transitionLeaveTimeout={250}>
-                    {this.getBody()}
-                </CSSTransition>
-                <div className="card-footer text-xs-right">
-                    <div className="btn-group" role="group">
-                        <a href="#" title={deleteTitle} onClick={this.handleDeleteArticle} className="btn btn-danger btn-sm"><i className='fa fa-trash-o'></i> Delete</a>
-                    </div>
-                    {this.props.getHint()}
-                </div>
+                {this.getTitle()} <CSSTransition transitionName="example" transitionAppear={true} transitionAppearTimeout={250} transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+                {this.getBody()}
+            </CSSTransition> {this.getFooter()} {this.props.getHint()}
             </div>
         )
     }
@@ -65,6 +56,18 @@ class Article extends Component {
                     <p>{article.body}</p>
                     <CommentList comments={article.getRelation('comments')} id={article.id}/>
                 </div>
+            </div>
+        )
+    }
+
+    getFooter() {
+        if (!this.props.isOpen) {
+            return null;
+        }
+        const deleteTitle = `Delete "${this.props.article.title}" article`;
+        return (
+            <div className="card-footer clearfix">
+                <a href="#" title={deleteTitle} onClick={this.handleDeleteArticle} className="btn btn-danger btn-sm pull-xs-right"><i className='fa fa-trash-o'></i> Delete</a>
             </div>
         )
     }
