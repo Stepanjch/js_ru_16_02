@@ -21,7 +21,6 @@ class Article extends Component {
     render() {
         return (
             <div>
-                <a href = "#" onClick = {this.select.bind(this)} >select</a>
                 {this.props.getHint()}
                 {this.getTitle()}
                 <CSSTransition transitionName="example" transitionAppear={true}
@@ -30,6 +29,7 @@ class Article extends Component {
                                transitionLeaveTimeout={300}>
                     {this.getBody()}
                 </CSSTransition>
+                <a href = "#" onClick = {this.select.bind(this)} >select</a>
             </div>
         )
     }

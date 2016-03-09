@@ -53,7 +53,7 @@ class ArticleStore extends SimpleStore {
     }
 
     getOrLoadAll() {
-        if (!this.loading && !this.loaded) loadAllArticles()
+        if (!this.loading && !this.loaded) loadAllArticles();
         return this.getAll()
     }
 }

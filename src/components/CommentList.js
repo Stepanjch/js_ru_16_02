@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Comment from './Comment'
 import toggleOpen from './../HOC/toggleOpen'
-import { addComment } from './../actions/comment'
+import { addComment, loadComments } from './../actions/comment'
 
 class CommentList extends Component {
     static propTypes = {
@@ -13,6 +13,14 @@ class CommentList extends Component {
 
     state = {
         comment: ''
+    }
+
+    componentWillReceiveProps(newProps) {
+        console.log(newProps.article.id, newProps);
+        const { id } = newProps.article;
+        if (newProps.isOpen && !this.props.isOpen) {
+
+        }
     }
 
     render() {
@@ -28,9 +36,11 @@ class CommentList extends Component {
     }
 
     getBody() {
-        const { article, isOpen } = this.props
-        if (!isOpen) return null
-        const commentList = article.getRelation('comments').map(comment => <li key={comment.id}><Comment comment = {comment}/></li>)
+        const { article, isOpen } = this.props;
+        if (!isOpen) return null;
+        //console.log('this com', this);
+        //const commentList = loadComments({ id }).map(comment => <li key={comment.id}><Comment comment = {comment}/></li>);
+        //const commentList = article.getRelation('comments').map(comment => <li key={comment.id}><Comment comment = {comment}/></li>)
         return (
             <div>
                 <ul>{isOpen ? commentList : null}</ul>
